@@ -1,0 +1,5 @@
+Credentials cache: API:0F2A0B4D-8470-482D-9281-0CD8202352F0
+        Principal: hoekim@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  8 15:57:03 2021  Sep  9 01:56:52 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
