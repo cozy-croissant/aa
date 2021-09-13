@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puchar.c                                        :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabeet.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 22:26:31 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/12 17:56:17 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/12 18:47:27 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/12 19:18:59 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_print_reverse_alphabet(void)
 {
-	write(1, &c, 1);
+	char	c;
+
+	c = 'z';
+	while (c >= 'a')
+	{
+		write(1, &c, 1);
+		c--;
+	}
 }
