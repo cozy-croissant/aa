@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 00:41:33 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/17 02:13:58 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/17 22:36:07 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	temp = tab[0];
 	while (j < size)
 	{
-		while (tab[i])
+		while (i < size - 1)
 		{
 			if (tab[i] > tab[i + 1])
 			{

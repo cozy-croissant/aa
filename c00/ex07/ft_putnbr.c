@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 10:09:40 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/17 04:47:51 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/17 21:52:09 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_42(int n)
 	}
 }
 
-void	ft_putnb(int n)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{
@@ -46,6 +46,7 @@ void	ft_putnb(int n)
 	{
 		n *= -1;
 		write(1, "-", 1);
+		ft_42(n);
 	}
 	else
 		ft_42(n);

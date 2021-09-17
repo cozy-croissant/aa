@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 03:02:02 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/16 03:04:37 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/17 22:04:02 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_swap(int *a, int *b)
 {
 	int	temp;
 
-	*a = temp;
-	temp = *b;
-	*b = *a;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

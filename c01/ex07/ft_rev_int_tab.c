@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 23:38:49 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/17 00:39:06 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/17 22:28:24 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	int	temp;
 
 	i = 0;
-	while (tab[i] < (size / 2))
+	while (i < size / 2)
 	{
 		temp = tab[i];
 		tab[i] = tab [size - i - 1];
