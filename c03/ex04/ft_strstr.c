@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 00:17:42 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/18 22:33:31 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/19 19:02:29 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/19 20:05:36 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_str_is_alpha(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i])
+	if (*to_find == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		if (!('a' <= str[i] && str[i] <= 'z' || 'A' <= str[i] && str[i] <= 'Z'))
-			return (0);
+		j = 0;
+		while (str[i + j] == to_find[j])
+		{
+			j++;
+			if (to_find[j] == '\0')
+				return (&str[i]);
+		}
 		i++;
 	}
-	return (1);
+	return (0);
 }

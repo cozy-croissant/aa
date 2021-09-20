@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 00:17:42 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/18 22:33:31 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/19 17:13:59 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/20 01:13:55 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_str_is_alpha(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	while ((*s1 || *s2) && i < n)
 	{
-		if (!('a' <= str[i] && str[i] <= 'z' || 'A' <= str[i] && str[i] <= 'Z'))
-			return (0);
+		if (*s1 > *s2)
+			return (1);
+		if (*s1 < *s2)
+			return (-1);
+		s1++;
+		s2++;
 		i++;
 	}
-	return (1);
+	return (0);
 }

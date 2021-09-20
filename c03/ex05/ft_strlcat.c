@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 00:17:42 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/18 22:33:31 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/19 20:19:52 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/20 01:26:33 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_str_is_alpha(char *str)
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i])
-	{
-		if (!('a' <= str[i] && str[i] <= 'z' || 'A' <= str[i] && str[i] <= 'Z'))
-			return (0);
+	j = 0;
+	while (dest[i])
 		i++;
+	while (src[j])
+		j++;
+	if (i >= size)
+	{
+		return (i + j);
 	}
-	return (1);
+	if (i < size)
+	{
+		write(1, dest, i);
+		return (size + j);
+	}
 }
