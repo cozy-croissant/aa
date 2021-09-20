@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 19:02:29 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/20 17:26:43 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/20 12:32:32 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/20 16:22:13 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
 
 	i = 0;
-	if (*to_find == '\0')
-		return (str);
-	while (str[i])
+	while (i + 1 < size && src[i])
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			j++;
-			if (to_find[j] == '\0')
-				return (&str[i]);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	while (src[i])
+		++i;
+	return (i);
 }

@@ -6,11 +6,9 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 00:17:42 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/18 22:33:31 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/20 19:29:14 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_str_is_alpha(char *str)
 {
@@ -19,7 +17,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!('a' <= str[i] && str[i] <= 'z' || 'A' <= str[i] && str[i] <= 'Z'))
+		if ((str[i] > 'a') || ('z' < str[i] && str[i] < 'A') || ('Z' < str[i]))
 			return (0);
 		i++;
 	}
