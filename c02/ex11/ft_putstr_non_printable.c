@@ -6,24 +6,25 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 14:53:26 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/20 21:04:14 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/20 22:44:52 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	hexa_print(char c)
 {
-	int		div;
-	int		mod;
 	char	*hex;
 
 	hex = "0123456789abcdef";
-	div = c / 16;
-	mod = c % 16;
-	write(1, "\\", 1);
-	write(1, &hex[(unsigned int)div], 1);
-	write(1, &hex[(unsigned int)mod], 1);
+	ft_putchar('\\');
+	ft_putchar(hex[(unsigned char)c / 16]);
+	ft_putchar(hex[(unsigned char)c % 16]);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -33,10 +34,10 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(' ' <= str[i] && str[i] <= '~'))
+		if (' ' > str[i] || str[i] > '~')
 			hexa_print(str[i]);
 		else
-			write (1, &str[i], 1);
+			ft_putchar(str[i]);
 		i++;
 	}
 }

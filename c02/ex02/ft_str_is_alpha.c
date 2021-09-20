@@ -6,20 +6,17 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 00:17:42 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/20 19:29:14 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/20 23:12:23 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if ((str[i] > 'a') || ('z' < str[i] && str[i] < 'A') || ('Z' < str[i]))
+		if (!(('a' <= *str && *str <= 'z') || ('A' <= *str && *str <= 'Z')))
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }
