@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2020/01/28 03:44:54 by shpark            #+#    #+#             */
+/*   Updated: 2020/01/30 08:42:50 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include "ft_div_mod.c"
 
-void	ft_print_memory(int i)
+int		main(void)
 {
-	int	i;
+	int a;
+	int b;
+	int div;
+	int mod;
+
+	a = 5;
+	b = 2;
+	ft_div_mod(a, b, &div, &mod);
+	printf("%d / %d = %d, left %d\n", a, b, div, mod);
 }

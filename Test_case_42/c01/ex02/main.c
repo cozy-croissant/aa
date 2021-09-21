@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2020/01/28 03:44:46 by shpark            #+#    #+#             */
+/*   Updated: 2020/01/30 08:42:45 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include "ft_swap.c"
 
-void	ft_print_memory(int i)
+int     main(void)
 {
-	int	i;
+    int a;
+    int b;
+
+    a = 1;
+    b = 2;
+    printf("before: %d %d\n", a, b);
+    ft_swap(&a, &b);
+    printf("before: %d %d\n", a, b);
 }

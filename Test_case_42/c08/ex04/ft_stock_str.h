@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2020/02/05 09:33:25 by shpark            #+#    #+#             */
+/*   Updated: 2020/02/05 09:33:26 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-void	ft_print_memory(int i)
+typedef struct	s_stock_str
 {
-	int	i;
-}
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
+
+#endif

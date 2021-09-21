@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: seoh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2020/02/10 15:02:30 by seoh              #+#    #+#             */
+/*   Updated: 2020/02/10 15:03:05 by seoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_H
+# define FT_H
 
-void	ft_print_memory(int i)
-{
-	int	i;
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif

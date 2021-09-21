@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2020/01/28 07:17:29 by shpark            #+#    #+#             */
+/*   Updated: 2020/02/05 10:29:45 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_memory(int i)
+#include "ft_abs.h"
+
+int	main(void)
 {
-	int	i;
+	int	index;
+
+	index = -5;
+	while (index < 5)
+	{
+		printf("macros::abs(%d) = %d\n", index, ABS(index));
+		index++;
+	}
 }

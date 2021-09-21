@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_memory.c                                  :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 16:47:17 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 21:47:05 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/21 22:19:03 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/21 22:40:05 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_memory(int i)
+int	main (int argc, char **argv)
 {
 	int	i;
+
+	i = 0;
+	while (argv[0][i])
+	{
+		write(1, &argv[0][i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
+	return 0;
 }
