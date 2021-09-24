@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 21:48:36 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/23 14:07:28 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/24 23:16:22 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_obase(char *str, char *base, int i, int len)
 	int	j;
 	int	n;
 
+	n = 0;
 	while (ft_base_check(str, base, i))
 	{
 		j = ft_base_check(str, base, i);
@@ -73,7 +74,6 @@ int	ft_atoi_base(char *str, char *base)
 	int	len;
 
 	i = 0;
-	n = 0;
 	nega = 1;
 	len = ft_len_check(base);
 	if (ft_len_check(base) == 1)
