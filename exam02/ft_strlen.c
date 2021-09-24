@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 00:23:52 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/24 18:11:57 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/23 23:12:46 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/23 23:14:47 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
+	int	i =0;
+	while(str[i])
+		++i;
 	return (i);
 }

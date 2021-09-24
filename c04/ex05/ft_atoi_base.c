@@ -6,11 +6,64 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 21:48:36 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/22 21:52:20 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/23 14:07:28 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+int	ft_base_check(char *str, char *base, int i)
+{
+	int	j;
+
+	j = 0;
+	while (base[j])
+	{
+		if (str[i] == base[j])
+			return (j + 1);
+		j++;
+	}
+	return (0);
+}
+
+int	ft_obase(char *str, char *base, int i, int len)
+{
+	int	j;
+	int	n;
+
+	while (ft_base_check(str, base, i))
+	{
+		j = ft_base_check(str, base, i);
+		if (j >= 0)
+			n = n * len + (j - 1);
+		i++;
+	}
+	return (n);
+}
+
+int	ft_len_check(char *base)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (base[i] == '+' || base[i] == '-')
+		return (1);
+	while (base[i])
+	{
+		j = i + 1;
+		while (base[j])
+		{
+			if (base[i] == base[j] || base[j] == '+' || base[j] == '-')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	if (i < 2)
+		return (1);
+	return (i);
+}
 
 int	ft_atoi_base(char *str, char *base)
 {
@@ -33,11 +86,6 @@ int	ft_atoi_base(char *str, char *base)
 			nega *= -1;
 		i++;
 	}
-	while (s)
-	{
-		i
-		n = n * len + 
-		i++;
-	}
+	n = ft_obase(str, base, i, len);
 	return (n * nega);
 }

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 00:23:52 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/24 18:11:57 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/23 14:54:47 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/23 15:44:49 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_recursive_factorial(int nb)
 {
-	int	i;
+	int	n;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	n = nb * ft_recursive_factorial(nb - 1);
+	return (n);
 }

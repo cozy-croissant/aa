@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/21 00:23:52 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/24 18:11:57 by hoekim           ###   ########.fr       */
+/*   Created: 2021/09/23 22:22:25 by hoekim            #+#    #+#             */
+/*   Updated: 2021/09/23 22:42:25 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+	{
+		char *str = av[1];
+		int i = 0;
+		while (str[i])
+			++i;
+		--i;
+		while (i >= 0)
+		{
+			write(1, str + i, 1);
+			--i;
+		}
+	}
+	write (1, "\n", 1);
+	return (0);
 }
