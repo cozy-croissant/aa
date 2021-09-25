@@ -6,16 +6,17 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 22:19:03 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/21 22:40:05 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/25 19:57:51 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 
+	argc = 1;
 	i = 0;
 	while (argv[0][i])
 	{
@@ -23,5 +24,5 @@ int	main (int argc, char **argv)
 		i++;
 	}
 	write(1, "\n", 1);
-	return 0;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 21:48:36 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/24 23:16:22 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/25 15:01:24 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ int	ft_obase(char *str, char *base, int i, int len)
 	int	n;
 
 	n = 0;
-	while (ft_base_check(str, base, i))
+	while (!((9 <= str[i] && str[i] <= 13) || str[i] == 32))
 	{
-		j = ft_base_check(str, base, i);
-		if (j >= 0)
-			n = n * len + (j - 1);
-		i++;
+		while (ft_base_check(str, base, i))
+		{
+			j = ft_base_check(str, base, i);
+			if (j >= 0)
+				n = n * len + (j - 1);
+			i++;
+		}
 	}
 	return (n);
 }
@@ -56,6 +59,8 @@ int	ft_len_check(char *base)
 		while (base[j])
 		{
 			if (base[i] == base[j] || base[j] == '+' || base[j] == '-')
+				return (1);
+			if (base[i] == 32)
 				return (1);
 			j++;
 		}

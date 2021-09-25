@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:12:32 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/22 00:38:54 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/25 13:43:44 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ void	ft_base(long n, char *base)
 {
 	int	len;
 
-	if (ft_len_check(base) > 1)
-		len = ft_len_check(base);
+	len = ft_len_check(base);
 	if (n >= len)
 	{
 		ft_base(n / len, base);

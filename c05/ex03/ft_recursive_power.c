@@ -6,15 +6,15 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 16:25:30 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/23 16:43:36 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/25 19:31:57 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_recursive_power(int nb, int power)
 {
-	int	i;
 	int	n;
 
+	n = 0;
 	if (power < 0)
 		return (0);
 	if (power == 0)
