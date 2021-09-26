@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 01:51:14 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/26 19:59:39 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/27 00:58:09 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,11 @@ long	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *str)
+char	*ft_strcat(char *coa, char *str)
 {
-	int	i;
-	int	len;
-
-	i = 0;
-	len = ft_strlen(dest);
-	while (str[i])
-	{
-		dest[len] = str[i];
-		i++;
-	}
-	return (dest);
+	while (*str)
+		*(coa++) = *(str++);
+	return (coa);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
