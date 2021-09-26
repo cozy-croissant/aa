@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 19:59:34 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/26 21:32:03 by hoekim           ###   ########.fr       */
+/*   Created: 2020/02/05 09:33:25 by shpark            #+#    #+#             */
+/*   Updated: 2020/02/05 09:33:26 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_find_next_prime(int nb)
-{
-	int	i;
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-	i = 2;
-	if (nb < 2)
-		return (2);
-	while (nb / i >= i)
-	{
-		if (nb % i == 0)
-		{
-			nb++;
-			i = 1;
-		}
-		i++;
-	}
-	return (nb);
-}
+typedef struct	s_stock_str
+{
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
+
+#endif

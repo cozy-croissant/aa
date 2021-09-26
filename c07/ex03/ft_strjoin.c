@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 01:51:14 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/25 02:05:52 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/26 19:59:39 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,54 @@
 
 long	ft_strlen(char *str)
 {
-	long	len;
+	long	i;
 
-	len = 0;
-	while (str[len] != 0)
-		len++;
-	return (len);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-char	*ft_strcat(char *ans, char *str)
+char	*ft_strcat(char *dest, char *str)
 {
-	while (*str)
-		*(ans++) = *(str++);
-	return (ans);
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(dest);
+	while (str[i])
+	{
+		dest[len] = str[i];
+		i++;
+	}
+	return (dest);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char	*ans;
+	char	*coa;
 	char	*tmp;
 	long	len;
 	int		i;
 
 	if (size == 0)
 	{
-		ans = (char*)malloc(1);
-		ans[0] = 0;
-		return (ans);
+		coa = malloc(1);
+		coa[0] = 0;
+		return (coa);
 	}
 	i = 0;
 	len = 0;
 	while (i < size)
 		len += ft_strlen(strs[i++]);
-	ans = (char*)malloc(len + (size - 1) * ft_strlen(sep) + 1);
+	coa = malloc(len + ft_strlen(sep) * (size - 1) + 1);
 	i = 1;
-	tmp = ft_strcat(ans, strs[0]);
+	tmp = ft_strcat(coa, strs[0]);
 	while (i < size)
 	{
 		tmp = ft_strcat(tmp, sep);
 		tmp = ft_strcat(tmp, strs[i++]);
 	}
 	*tmp = 0;
-	return (ans);
+	return (coa);
 }
