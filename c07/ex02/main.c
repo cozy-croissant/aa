@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 int	ft_ultimate_range(int **range, int min, int max);
 
 int		a(int **range, int min, int max)
@@ -70,4 +71,3 @@ int		main(void)
 	debug_dump_array(range, bound);
 	printf("\n");
 }
-

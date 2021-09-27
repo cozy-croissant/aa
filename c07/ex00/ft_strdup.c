@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 23:24:29 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/25 01:43:23 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/27 12:47:02 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strdup(char *src)
 		cpy[j] = src[j];
 		++j;
 	}
-	cpy[j] = '\0';
+	cpy[j] = 0;
 	return (cpy);
 }
