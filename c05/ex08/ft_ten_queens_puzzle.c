@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:37:37 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/28 15:01:39 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/28 17:04:53 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,54 +17,64 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	check(int n, char queen[])
+void	print_board(int *board)
 {
 	int	i;
 
 	i = 0;
-	while (i < n)
+	while (i < 10)
 	{
-		if (queen[i] == queen[n] || n - i == queen[n] - queen[i]
-			|| n - i == queen[i] - queen[n])
+		ft_putchar('0' + board[i]);
+		i++;
+	}
+	ft_putchar('\n');
+}
+
+int	check_num(int *board, int num, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+	{
+		if (board[i] == num)
+			return (0);
+		if (board[i] + index - i == num)
+			return (0);
+		if (board[i] - index + i == num)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	rec_queen(int n, char queen[])
+void	find_queens(int *board, int index, int *cnt)
 {
-	int	cnt;
 	int	i;
 
-	cnt = 0;
+	if (index == 10)
+	{
+		print_board(board);
+		*cnt += 1;
+		return ;
+	}
 	i = 0;
-	if (n == 10)
+	while (i < 10)
 	{
-		while (i < 10)
-			ft_putchar(queen[i++]);
-		write(1, "\n", 1);
-		return (1);
-	}
-	else
-	{
-		while (i < 10)
+		if (check_num(board, i, index))
 		{
-			queen[n] = i + '0';
-			if (check(n, queen))
-				cnt += rec_queen(n + 1, queen);
-			i++;
+			board[index] = i;
+			find_queens(board, index + 1, cnt);
 		}
+		i++;
 	}
-	return (cnt);
 }
 
 int	ft_ten_queens_puzzle(void)
 {
-	int		cnt;
-	char	queen[10];
+	int	board[10];
+	int	cnt;
 
-	cnt = 0;
-	cnt = rec_queen(0, queen);
+	find_queens(board, 0, &cnt);
 	return (cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 23:16:50 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/28 12:53:05 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/28 16:52:06 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ void	ft_putstr(char *str)
 		str++;
 	}
 	write(1, "\n", 1);
+}
+
+void	swap(char **a, char **b)
+{
+	char	*temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 int	ft_strcmp(char *s1, char *s2)
@@ -40,7 +49,6 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	int		j;
-	char	*temp;
 
 	i = 1;
 	while (i < argc)
@@ -50,9 +58,7 @@ int	main(int argc, char **argv)
 		{
 			if (ft_strcmp(argv[i], argv[j]) > 0)
 			{
-				temp = argv[i];
-				argv[i] = argv[j];
-				argv[j] = temp;
+				swap(&argv[i], &argv[j]);
 			}
 			j++;
 		}
@@ -60,7 +66,9 @@ int	main(int argc, char **argv)
 	}
 	i = 1;
 	while (i < argc)
+	{
 		ft_putstr(argv[i]);
-	i++;
+		i++;
+	}
 	return (0);
 }
