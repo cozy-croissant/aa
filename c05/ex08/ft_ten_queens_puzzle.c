@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:37:37 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/26 09:56:29 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/28 15:01:39 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check(int n, char queen[])
 	while (i < n)
 	{
 		if (queen[i] == queen[n] || n - i == queen[n] - queen[i]
-				|| n - i == queen[i] - queen[n])
+			|| n - i == queen[i] - queen[n])
 			return (0);
 		i++;
 	}
@@ -61,7 +61,7 @@ int	rec_queen(int n, char queen[])
 
 int	ft_ten_queens_puzzle(void)
 {
-	int	cnt;
+	int		cnt;
 	char	queen[10];
 
 	cnt = 0;

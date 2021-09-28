@@ -6,7 +6,7 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 01:22:38 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/27 09:53:07 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/28 13:17:11 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,21 @@ long long	ft_strlen(char *str, char *charset)
 	return (cnt);
 }
 
-void	ft_strcpy(char *dest, char *src, char *fin)
+void	ft_strcpy(char *dest, char *src, char *str)
 {
-	while (src < fin)
+	while (src < str)
 		*(dest)++ = *(src)++;
 	*dest = 0;
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**ans;
+	char	**strs;
 	char	*tmp;
 	int		i;
 
 	i = 0;
-	ans = malloc(sizeof(char *) * ft_strlen(str, charset) + 1);
+	strs = malloc(sizeof(char *) * ft_strlen(str, charset) + 1);
 	while (*str)
 	{
 		if (!ck_charset(*str, charset))
@@ -66,11 +66,11 @@ char	**ft_split(char *str, char *charset)
 			str++;
 			while (!ck_charset(*str, charset) && *str)
 				++str;
-			ans[i] = malloc(str - tmp + 1);
-			ft_strcpy(ans[i++], tmp, str);
+			strs[i] = malloc(str - tmp + 1);
+			ft_strcpy(strs[i++], tmp, str);
 		}
 		str++;
 	}
-	ans[i] = 0;
-	return (ans);
+	strs[i] = 0;
+	return (strs);
 }

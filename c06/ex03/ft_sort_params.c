@@ -6,37 +6,32 @@
 /*   By: hoekim <hoekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 23:16:50 by hoekim            #+#    #+#             */
-/*   Updated: 2021/09/27 00:04:01 by hoekim           ###   ########.fr       */
+/*   Updated: 2021/09/28 12:53:05 by hoekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_params(int argc, char **c, int i)
+void	ft_putstr(char *str)
 {
-	int	j;
-
-	while (i < argc)
+	while (*str)
 	{
-		j = 0;
-		while (c[i][j])
-		{
-			write(1, &c[i][j], 1);
-			j++;
-		}
-		write(1, "\n", 1);
-		i++;
+		write(1, str, 1);
+		str++;
 	}
+	write(1, "\n", 1);
 }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 || *s2)
+	int	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		if (*s1 > *s2)
-			return (1);
-		s1++;
-		s2++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
 	return (0);
 }
@@ -48,7 +43,7 @@ int	main(int argc, char **argv)
 	char	*temp;
 
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
 		j = i + 1;
 		while (j < argc)
@@ -64,6 +59,8 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	i = 1;
-	ft_print_params(argc, argv, i);
+	while (i < argc)
+		ft_putstr(argv[i]);
+	i++;
 	return (0);
 }
